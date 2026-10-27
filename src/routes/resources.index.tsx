@@ -1,0 +1,5 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { PageIntro } from "@/components/content-page";
+import { pageHead, resources } from "@/lib/site-content";
+import { Button } from "@/components/ui/button";
+export const Route = createFileRoute("/resources/")({ staticData: { sitemap: true }, head: () => pageHead("Xclatix resources", "Explore operational workflow guides, team onboarding, and contact resources for Xclatix."), component: () => <main><PageIntro eyebrow="Resources" title="A clearer way to run the work." intro="Explore practical approaches to connected business operations." /><section className="mx-auto grid max-w-6xl gap-6 px-6 py-16 md:grid-cols-2">{resources.map(r => <article key={r.id} className="rounded-lg border border-border bg-card p-7"><r.icon className="size-7 text-primary" /><h2 className="mt-5 text-2xl font-semibold">{r.label}</h2><p className="mt-3 text-muted-foreground">{r.intro}</p><Button asChild variant="link" className="mt-4 px-0"><Link to="/resources/$topic" params={{topic: r.id}}>Explore →</Link></Button></article>)}</section></main> });

@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageIntro } from "@/components/content-page";
+import { DemoForm } from "@/components/demo-form";
+import { pageHead } from "@/lib/site-content";
+export const Route = createFileRoute("/contact")({ staticData: { sitemap: true }, head: () => pageHead("Contact the Xclatix team", "Contact Bitwords about Xclatix or request a demo for your business."), component: () => <main><PageIntro eyebrow="Contact" title="Let’s talk about your business." intro="Tell us where work gets disconnected and what your team needs from a connected operating platform." /><section className="mx-auto max-w-6xl px-6 py-10"><h2 className="text-xl font-semibold">Contact Bitwords</h2><a href="mailto:usman@bitwords.com" className="mt-3 inline-block text-primary">usman@bitwords.com</a></section><DemoForm /></main> });

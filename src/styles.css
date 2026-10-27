@@ -1,0 +1,150 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "DM Sans", sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --shadow-menu: var(--menu-shadow);
+}
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.975 0.009 85);
+  --foreground: oklch(0.26 0.012 70);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.012 70);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.012 70);
+  --primary: oklch(0.59 0.19 45);
+  --primary-foreground: oklch(0.99 0.004 90);
+  --secondary: oklch(0.955 0.012 85);
+  --secondary-foreground: oklch(0.26 0.012 70);
+  --muted: oklch(0.95 0.013 85);
+  --muted-foreground: oklch(0.5 0.02 70);
+  --accent: oklch(0.52 0.12 155);
+  --accent-foreground: oklch(0.26 0.012 70);
+  --destructive: oklch(0.53 0.2 25);
+  --destructive-foreground: oklch(0.99 0.004 90);
+  --success: oklch(0.56 0.13 155);
+  --border: oklch(0.26 0.012 70 / 13%);
+  --input: oklch(0.26 0.012 70 / 18%);
+  --ring: oklch(0.59 0.19 45);
+  --gradient-ember: linear-gradient(120deg, oklch(0.56 0.19 42), oklch(0.68 0.17 62));
+  --glow: radial-gradient(60% 50% at 50% 0%, oklch(0.59 0.19 45 / 14%), transparent 70%);
+  --shadow-ember: 0 24px 60px -28px oklch(0.45 0.15 45 / 45%);
+  --menu-shadow: 0 18px 40px -18px oklch(0.26 0.012 70 / 22%);
+  --hero-wash: oklch(0.986 0.002 85);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0; }
+}
+
+@utility text-ember {
+  background: var(--gradient-ember);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility bg-ember { background: var(--gradient-ember); }
+@utility bg-glow { background-image: var(--glow); }
+@utility shadow-ember { box-shadow: var(--shadow-ember); }
+.operations-lines { stroke: var(--border); stroke-width: 1.2; }
+.operations-signals { stroke: var(--primary); stroke-width: 2; stroke-dasharray: 8 180; opacity: 0.35; animation: operations-flow 22s linear infinite; }
+.operations-signals path:nth-child(2) { stroke: var(--accent); }
+.operations-signals path:nth-child(3) { stroke: var(--success); }
+.operations-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--muted-foreground);
+  opacity: 0.55;
+  transform: translate(-50%, -50%);
+}
+.operations-sales { left: 10%; top: 22%; }
+.operations-team { left: 16.7%; top: 36.8%; }
+.operations-project { left: 9.7%; top: 82.2%; }
+.operations-approval { left: 90%; top: 21%; }
+.operations-finance { left: 83.3%; top: 60.5%; }
+.operations-report { left: 90.3%; top: 82.8%; }
+@keyframes operations-flow { to { stroke-dashoffset: -752; } }
+@media (max-width: 1100px) {
+  .operations-background { opacity: 0.4; }
+  .operations-team { left: 3%; }
+  .operations-finance { left: 97%; }
+}
+@media (max-width: 640px) {
+  .operations-background { opacity: 0.22; }
+  .operations-node { width: 34px; height: 34px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .operations-signals { animation: none; }
+}
+html[data-motion="reduced"] .operations-signals { animation: none; opacity: 0.15; }
+html[data-motion="reduced"] { scroll-behavior: auto; }
+html[data-motion="reduced"] *, html[data-motion="reduced"] *::before, html[data-motion="reduced"] *::after { transition-duration: 0s !important; }
+.people-hero { background: var(--hero-wash); min-height: 580px; }
+.hero-center {
+  animation: hero-rise 0.9s ease-out both;
+}
+.hero-people {
+  object-position: center;
+  opacity: 0.32;
+  animation: hero-drift 32s ease-in-out infinite alternate;
+}
+@keyframes hero-drift { from { transform: scale(1); } to { transform: scale(1.07); } }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) {
+  .hero-people, .hero-center { animation: none; }
+}
+html[data-motion="reduced"] .hero-people, html[data-motion="reduced"] .hero-center { animation: none; }
+@media (min-width: 1500px) { .people-hero { min-height: 610px; } }
+@media (max-width: 900px) {
+  .hero-people { opacity: 0.25; }
+}
+@media (max-width: 640px) {
+  .people-hero { min-height: auto; }
+  .hero-center { padding-top: 48px; padding-bottom: 48px; }
+  .hero-center h1 { font-size: 36px; }
+}
+

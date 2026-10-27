@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PageIntro, ProductDirectory } from "@/components/content-page";
+import { OperationalPractices } from "@/components/business-solutions";
+import { pageHead } from "@/lib/site-content";
+export const Route = createFileRoute("/why-xclatix")({ staticData: { sitemap: true }, head: () => pageHead("Why Xclatix", "Connect your sales, delivery, people, and finance with shared context and everyday collaboration."), component: () => <main><PageIntro eyebrow="Why Xclatix" title="Stop rebuilding the story between teams." intro="When sales, operations, HR, and finance work from disconnected information, every handoff starts with another explanation. Xclatix brings those perspectives together." /><OperationalPractices /><ProductDirectory /></main> });

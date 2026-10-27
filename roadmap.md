@@ -1,0 +1,25 @@
+# Current tasks
+- [x] Replace the Xclatix logo with the newly supplied artwork and matching favicon.
+- [x] Publish www.xclatix.com with the sitemap and submit it to Google Search Console.
+- [x] Build private shared inbox and verify live website chat with real automatic AI replies.
+- [ ] Verify owner inbox and Gmail inquiry/reply end to end (waiting for usman@bitwords.com to sign in, enable Gmail, and send a fresh test inquiry).
+- [x] Publish the production Gmail checks endpoint (five-minute schedule prepared; Gmail processing still requires owner activation).
+- [ ] Connect WhatsApp and implement its durable signed receiver and delivery tracking (connection setup declined).
+- [x] Rebuild Xclatix with Connecteam-inspired navigation, homepage, product, industries, about, resources, and pricing pages.
+- [x] Verify dropdowns, mobile navigation, and new page links.
+- [ ] Verify automatic demo lead delivery to usman@bitwords.com (notification prepared; waiting for notify.xclatix.com DNS verification and publishing).
+- [ ] Connect demo submissions to real Bitwords signup (waiting for signup URL and any required integration details).
+- [ ] Connect Start Your Transition to a verified Bitwords signup/account page (Xclatix sign-in verified; public signup requires administrator access or a supplied signup URL).
+- [x] Create six separate business-solution pages and update solution navigation.
+- [x] Add and verify demo requests stored for the owner to review.
+- [ ] Add approved real Xclatix case studies (waiting for customer stories and permission).
+- [x] Expand original Xclatix content with detailed business-type solutions informed by Trainual.
+- [x] Verify business solution navigation and page layout.
+- [x] Add a visitor-controlled reduced-motion option respecting device preferences.
+- [x] Add an AI workflow advisor for business types and operational challenges.
+- [x] Verify motion controls and real AI recommendations end to end.
+- [x] Use the newly uploaded Bitwords logo.
+- [x] Show Xclatix clearly without stretching its proportions.
+- [x] Replace the background grid with animated business-operation connections.
+- [x] Verify logo loading, proportions, narrow-screen fit, animation, and reduced-motion behavior in the browser.
+- [x] Add Lead generation (Apollo-inspired) and Omnichannel AI agent (Trengo-inspired) add-on modules with dedicated pages.
